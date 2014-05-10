@@ -4,13 +4,14 @@
 ## Created: 5th May, 2014
 ## Last modified: 6th May, 2014
 ## Author: Antonio F.
+##
 
 ##
-## Creates a special matrix, really a lit containing 4 functions
+## Creates a special matrix, in fact a list containing 4 functions
 ##      $set : set matrix value
 ##      $get : get matrix value
 ##      $setinverse : set inverse matrix value
-##      $getinverse ; get inverse matrix value
+##      $getinverse : get inverse matrix value
 ##
 
 makeCacheMatrix <- function(a = matrix()) {
@@ -27,16 +28,18 @@ makeCacheMatrix <- function(a = matrix()) {
     getinverse <- function() inv
     
     ## Return a formated list with the four functions
-    list(set = set, get = get,
+    list(set = set, 
+         get = get,
          setinverse = setinverse,
          getinverse = getinverse)
 }
 
-
+##
 ## Calculates the inverse of the special matrix created with makeCacheMatrix()
 ## First check if the inverse has already been calculated. In that case returns
 ## the inverse from the cache, otherwise calculates, stores and returns
 ## the inverse
+##
 
 cacheSolve <- function(a, ...) {
     
